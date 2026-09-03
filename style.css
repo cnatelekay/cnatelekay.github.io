@@ -1,0 +1,883 @@
+/* ========================================
+   BASE
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Inter, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+strong {
+    color: #0f172a;
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.navbar {
+    max-width: 1200px;
+    min-height: 72px;
+
+    margin: auto;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.45rem;
+    font-weight: 900;
+    color: #2563eb;
+}
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #475569;
+
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+.github-button {
+    padding: 9px 17px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+.github-button:hover {
+    background: #0f172a;
+    color: white;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            #1e3a8a 0,
+            transparent 32%
+        ),
+        #0f172a;
+
+    color: white;
+}
+
+.hero-inner {
+    max-width: 1200px;
+    min-height: calc(100vh - 72px);
+
+    margin: auto;
+    padding: 90px 30px;
+
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr;
+
+    align-items: center;
+    gap: 80px;
+}
+
+.eyebrow {
+    color: #60a5fa;
+
+    font-size: 0.76rem;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(3.5rem, 7vw, 6.2rem);
+
+    line-height: 0.98;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #60a5fa;
+}
+
+.hero h2 {
+    color: #e2e8f0;
+
+    font-size: 1.35rem;
+    font-weight: 500;
+
+    margin-bottom: 25px;
+}
+
+.hero-description {
+    max-width: 700px;
+
+    color: #94a3b8;
+
+    font-size: 1.05rem;
+
+    margin-bottom: 35px;
+}
+
+.hero-actions,
+.contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    border-radius: 6px;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    color: white;
+    border: 1px solid #475569;
+}
+
+.btn-outline:hover {
+    border-color: white;
+}
+
+
+/* ========================================
+   PROFILE CARD
+======================================== */
+
+.profile-card {
+    border: 1px solid #334155;
+    border-radius: 12px;
+
+    background: rgba(15, 23, 42, 0.6);
+
+    padding: 30px;
+}
+
+.profile-label {
+    color: #60a5fa;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.profile-item {
+    padding: 16px 0;
+    border-bottom: 1px solid #334155;
+}
+
+.profile-item:last-child {
+    border-bottom: none;
+}
+
+.profile-item span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 0.75rem;
+
+    margin-bottom: 3px;
+}
+
+.profile-item strong {
+    color: #f8fafc;
+    font-size: 0.92rem;
+}
+
+
+/* ========================================
+   GENERAL SECTIONS
+======================================== */
+
+.section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 100px 30px;
+}
+
+.alternate {
+    max-width: none;
+
+    padding-left: max(
+        30px,
+        calc((100% - 1140px) / 2)
+    );
+
+    padding-right: max(
+        30px,
+        calc((100% - 1140px) / 2)
+    );
+
+    background: #f1f5f9;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 50px;
+}
+
+.section-title > span {
+    color: #2563eb;
+
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.section-title p {
+    color: #64748b;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    color: #0f172a;
+
+    font-size: 2.4rem;
+
+    letter-spacing: -1px;
+}
+
+
+/* ========================================
+   ABOUT
+======================================== */
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns: 1.6fr 0.7fr;
+
+    gap: 80px;
+}
+
+.about-main p {
+    margin-bottom: 20px;
+}
+
+.large-text {
+    color: #0f172a;
+
+    font-size: 1.65rem;
+
+    line-height: 1.45;
+
+    margin-bottom: 30px !important;
+}
+
+.about-stats {
+    border-left: 1px solid #cbd5e1;
+    padding-left: 35px;
+}
+
+.stat {
+    margin-bottom: 28px;
+}
+
+.stat strong {
+    display: block;
+
+    color: #2563eb;
+
+    font-size: 1.5rem;
+
+    margin-bottom: 2px;
+}
+
+.stat span {
+    color: #64748b;
+    font-size: 0.86rem;
+}
+
+
+/* ========================================
+   RESEARCH
+======================================== */
+
+.featured-project {
+    background: white;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+
+    padding: 40px;
+}
+
+.project-heading {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 25px;
+}
+
+.project-type {
+    color: #2563eb;
+
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+.project-heading h3 {
+    max-width: 800px;
+
+    color: #0f172a;
+
+    font-size: 1.6rem;
+
+    line-height: 1.35;
+}
+
+.year {
+    color: #64748b;
+    font-weight: 700;
+}
+
+.project-description {
+    max-width: 850px;
+
+    margin-bottom: 35px;
+}
+
+.research-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+.research-grid div {
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 8px;
+
+    padding: 20px;
+}
+
+.research-grid h4 {
+    color: #0f172a;
+
+    margin-bottom: 8px;
+}
+
+.research-grid p {
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+
+/* ========================================
+   TAGS
+======================================== */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.tags span {
+    background: #dbeafe;
+
+    color: #1e40af;
+
+    border-radius: 100px;
+
+    padding: 5px 11px;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+
+/* ========================================
+   EXPERIENCE
+======================================== */
+
+.experience {
+    display: grid;
+
+    grid-template-columns: 160px 1fr;
+
+    gap: 35px;
+
+    padding: 35px 0;
+
+    border-top: 1px solid #e2e8f0;
+}
+
+.experience:last-child {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.experience-date {
+    color: #64748b;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.experience-content {
+    max-width: 800px;
+}
+
+.experience-content h3 {
+    color: #0f172a;
+
+    font-size: 1.25rem;
+}
+
+.experience-content h4 {
+    color: #2563eb;
+
+    font-size: 0.9rem;
+
+    margin: 3px 0 15px;
+}
+
+.experience-content ul {
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+
+/* ========================================
+   SKILLS
+======================================== */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.skill-group {
+    background: white;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+
+    padding: 25px;
+}
+
+.skill-group > span {
+    color: #94a3b8;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+}
+
+.skill-group h3 {
+    color: #0f172a;
+
+    margin: 8px 0 18px;
+}
+
+
+/* ========================================
+   EDUCATION
+======================================== */
+
+.education-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.education-card {
+    border-top: 3px solid #2563eb;
+
+    background: white;
+
+    padding: 30px;
+
+    box-shadow: 0 5px 25px
+        rgba(15, 23, 42, 0.05);
+}
+
+.degree-year {
+    color: #2563eb;
+
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    margin-bottom: 12px;
+}
+
+.education-card h3 {
+    color: #0f172a;
+
+    font-size: 1.4rem;
+}
+
+.education-card h4 {
+    color: #475569;
+
+    margin-bottom: 5px;
+}
+
+.university {
+    color: #2563eb;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+
+/* ========================================
+   CERTIFICATIONS
+======================================== */
+
+.cert-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+.cert {
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.cert strong {
+    font-size: 0.95rem;
+}
+
+.cert span {
+    color: #2563eb;
+
+    font-size: 0.8rem;
+
+    margin-top: 3px;
+}
+
+
+/* ========================================
+   CONTACT
+======================================== */
+
+.contact {
+    background: #2563eb;
+
+    color: white;
+}
+
+.contact-inner {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 100px 30px;
+}
+
+.contact .eyebrow {
+    color: #bfdbfe;
+}
+
+.contact h2 {
+    max-width: 750px;
+
+    font-size: clamp(2.8rem, 6vw, 5rem);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+.contact h2 span {
+    display: block;
+
+    color: #bfdbfe;
+}
+
+.contact-inner > p:not(.eyebrow) {
+    max-width: 650px;
+
+    color: #dbeafe;
+
+    margin-bottom: 30px;
+}
+
+.btn-light {
+    background: white;
+    color: #1e40af;
+}
+
+.btn-dark-outline {
+    color: white;
+    border: 1px solid #93c5fd;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    background: #0f172a;
+    color: #64748b;
+}
+
+.footer-inner {
+    max-width: 1200px;
+
+    margin: auto;
+    padding: 25px 30px;
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    font-size: 0.78rem;
+}
+
+.footer-inner strong {
+    color: white;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero-inner {
+        min-height: auto;
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .about-stats {
+        border-left: none;
+
+        border-top: 1px solid #cbd5e1;
+
+        padding-left: 0;
+        padding-top: 30px;
+    }
+
+    .research-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .section {
+        padding: 70px 20px;
+    }
+
+    .alternate {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .github-button {
+        font-size: 0.75rem;
+    }
+
+    .hero-inner {
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 3.2rem;
+    }
+
+    .profile-card {
+        padding: 22px;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .featured-project {
+        padding: 25px;
+    }
+
+    .project-heading {
+        flex-direction: column;
+    }
+
+    .research-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-inner {
+        padding: 80px 20px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+
+        padding: 25px 20px;
+    }
+
+}
